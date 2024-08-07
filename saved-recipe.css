@@ -1,0 +1,23 @@
+/* Add this to your existing CSS file */
+
+#saved-recipes-list {
+    margin-top: 20px;
+}
+
+.recipe-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.recipe-item h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #856352;
+}
+
+.recipe-item p {
+    margin: 5px 0 0;
+    font-size: 16px;
+}

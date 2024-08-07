@@ -1,0 +1,215 @@
+body {
+    background-color: #FEFCF6;
+}
+
+h1 {
+    font-family: "Cormorant Garamond", serif;
+    color: black;
+    font-size: 60px;
+    font-weight: 200;
+    text-align: center;
+}
+
+.dish-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px; 
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.rectangle {
+    background-color: #CCCAC1;
+    border-radius: 30px;
+    width: 400px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.rectangle img {
+    border-radius: 20px; 
+    width: 90%;
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.rectangle:hover {
+    transform: translateY(-10px);
+}
+
+.text-above {
+    font-family: "Rubik", sans-serif;
+    color: black;
+    font-size: 40px;
+    text-align: center;
+    margin: 0;
+    padding: 10px 0;
+    font-weight: 200; 
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.ingredients-button {
+    background-color: transparent;
+    border: 1px solid #856352;
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-family: "Rubik", sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 200;
+    transition: background-color 0.3s, color 0.3s, border 0.3s;
+}
+
+.ingredients-button:hover {
+    background-color: #856352;
+    color: white;
+}
+
+.heart-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    font-size: 35px;
+    line-height: 1;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.heart-icon:hover {
+    color: red;
+    background-color: transparent;
+}
+
+.ingredients-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    display: none; 
+}
+
+.ingredients-list li {
+    font-family: "Rubik", sans-serif;
+    color: black;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.home {
+    position: fixed; 
+    top: 40px;
+    left: 120px;
+    border: none;
+    padding: 20px 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: #CCCAC5;
+    transition: all 0.3s ease-in-out;
+}
+
+.home:hover {
+    transform: scale(0.9);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+}
+
+.cd-cart {
+    position: fixed;
+    top: 0;
+    right: -300px; /* Start off the screen */
+    width: 300px;
+    height: 100%;
+    background-color: white;
+    transition: right 0.3s ease; /* Smooth slide effect */
+    z-index: 1000; /* Ensure it's above other content */
+}
+
+.cd-cart--open {
+    right: 0; /* Slide in from the right */
+}
+
+.cd-cart__content {
+    transition: transform 0.3s ease;
+}
+
+.cd-cart__trigger {
+    position: fixed;
+    bottom: 20px;
+    right: 5%;
+    transition: transform 0.2s;
+}
+
+.cd-cart--empty .cd-cart__trigger,
+.cd-cart--empty .cd-cart__content {
+    transform: translateY(150px);
+}
+
+.cd-cart__product {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.cd-cart__product img {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.cd-cart__header .cd-cart__close-btn {
+    cursor: pointer;
+}
+
+.recipe-sidebar {
+    position: fixed;
+    right: -300px;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    background-color: #f4f4f4;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease;
+    z-index: 1000;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.recipe-sidebar.open {
+    right: 0;
+}
+
+.recipe-content {
+    padding: 20px;
+}
+
+.close-btn {
+    font-size: 30px;
+    cursor: pointer;
+    display: block;
+    text-align: right;
+}
+
+#saved-recipes img {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Dishes</title>
+    <link rel="stylesheet" href="asian.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <style>
+        /* Add these styles to your asian.css file */
+        .cd-cart {
+            position: fixed;
+            top: 0;
+            right: -300px; /* Start off the screen */
+            width: 300px;
+            height: 100%;
+            background-color: white;
+            transition: right 0.3s ease; /* Smooth slide effect */
+            z-index: 1000; /* Ensure it's above other content */
+        }
+
+        .cd-cart--open {
+            right: 0; /* Slide in from the right */
+        }
+
+        .cd-cart__header .cd-cart__close-btn {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Asian Dishes</h1>
+    <div class="dish-container">
+        <div class="rectangle">
+            <p class="text-above">Tempura</p>
+            <img src="tempura.png" alt="Tempura">
+            <div class="button-group">
+                <button class="ingredients-button" onclick="toggleIngredients('tempura-ingredients')">Ingredients</button>
+                <span class="heart-icon" onclick="addToCart('Tempura', 'tempura.png')">&hearts;</span>
+            </div>
+            <ul class="ingredients-list" id="tempura-ingredients">
+                <li>2 cups vegetable oil for frying</li>
+                <li>1 cup all-purpose flour</li>
+                <li>2 tablespoons cornstarch</li>
+                <li>1 pinch salt</li>
+                <li>1 cup water</li>
+                <li>1 large egg yolk</li>
+                <li>2 large egg whites, lightly beaten</li>
+                <li>1 pound medium shrimp, peeled and deveined, tails left on</li>
+            </ul>
+        </div>
+        <div class="rectangle">
+            <p class="text-above">Beef Bone Soup</p>
+            <img src="bonesoup.png" alt="Beef Bone Soup">
+            <div class="button-group">
+                <button class="ingredients-button" onclick="toggleIngredients('sushi-ingredients')">Ingredients</button>
+                <span class="heart-icon" onclick="addToCart('Beef Bone Soup', 'bonesoup.png')">&hearts;</span>
+            </div>
+            <ul class="ingredients-list" id="sushi-ingredients">
+                <li>2 cups sushi rice</li>
+                <li>2 1/2 cups water</li>
+                <li>1/3 cup rice vinegar</li>
+                <li>3 tablespoons sugar</li>
+                <li>1 teaspoon salt</li>
+                <li>1 pound sushi-grade fish</li>
+                <li>1 avocado, sliced</li>
+                <li>1 cucumber, julienned</li>
+                <li>Nori (seaweed sheets)</li>
+            </ul>
+        </div>
+        <div class="rectangle">
+            <p class="text-above">Pho</p>
+            <img src="pho.png" alt="Pho">
+            <div class="button-group">
+                <button class="ingredients-button" onclick="toggleIngredients('pho-ingredients')">Ingredients</button>
+                <span class="heart-icon" onclick="addToCart('Pho', 'pho.png')">&hearts;</span>
+            </div>
+            <ul class="ingredients-list" id="pho-ingredients">
+                <li>8 oz dried rice vermicelli noodles</li>
+                <li>Desired meat: chicken, pork, steak or raw shrimp</li>
+                <li>1 large yellow onion, quartered</li>
+                <li>2 (2-inch pieces) fresh ginger, unpeeled and halved, length-wise</li>
+                <li>6 cups broth (chicken, beef or vegetable, depending on protein choice)</li>
+                <li>2 cups water</li>
+                <li>1/4 tsp ground coriander</li>
+                <li>1 whole clove (optional)</li>
+                <li>1 1/2 Tablespoons fish sauce (or less, to taste preference)</li>
+                <li>¼ teaspoon hoisin sauce</li>
+                <li>1/4 teaspoon soy sauce</li>
+                <li>1/4 teaspoon red chili paste (sambal oelek)</li>
+                <li>1 stick cinnamon</li>
+                <li>salt and freshly ground black pepper</li>
+                <li>For garnish:</li>
+                <li>4 green onions, chopped</li>
+                <li>2 fresh jalapeño peppers or red thai chili peppers, thinly sliced and seeds removed</li>
+                <li>1 bunch fresh cilantro, chopped</li>
+                <li>1 bunch Thai basil leaves</li>
+                <li>1 cup fresh bean sprouts</li>
+                <li>2 limes, cut into wedges</li>
+                <li>Sriracha hot sauce, or additional red chili paste, for heat, optional</li>
+            </ul>
+        </div>
+    </div>
+    <div class="dish-container">
+        <div class="rectangle">
+            <p class="text-above">Chicken Fried Rice</p>
+            <img src="friedrice.png" alt="Chicken Fried Rice">
+            <div class="button-group">
+                <button class="ingredients-button" onclick="toggleIngredients('friedrice-ingredients')">Ingredients</button>
+                <span class="heart-icon" onclick="addToCart('Chicken Fried Rice', 'friedrice.png')">&hearts;</span>
+            </div>
+            <ul class="ingredients-list" id="friedrice-ingredients">
+                <li>White/Brown rice</li>
+                <li>Chicken breasts</li>
+                <li>Toasted sesame oil</li>
+                <li>Vegetable oil (or canola oil)</li>
+                <li>Frozen peas and carrots blend</li>
+                <li>Green onions</li>
+                <li>Garlic</li>
+                <li>Eggs</li>
+                <li>Low-sodium soy sauce</li>
+            </ul>
+        </div>
+    </div>
+        <div class="rectangle">
+            <p class="text-above">Uramaki</p>
+            <img src="uramaki.png" alt="urumaki">
+            <div class="button-group">
+                <button class="ingredients-button" onclick="toggleIngredients('uramaki-ingredients')">Ingredients</button>
+                <span class="heart-icon" onclick="addToCart('Uramaki', 'uramaki.png')">&hearts;</span>
+            </div>
+            <ul class="ingredients-list" id="uramaki-ingredients">
+                <li>600g sushi rice (cooked)</li>
+                <li>1 Avacado</li>
+                <li>250g salmon fillets</li>
+                <li>1 sweet potatoe</li>
+                <li>4 dried seaweed sheets</li>
+                <li>2 tbsp sesame seeds</li>
+                <li>2 tbsp masago (fish roe)</li>
+                <li>2 tbsp wasabi paste</li>
+                <li>sushi ginger (for serving)</li>
+                <li>soy sauce (for serving)</li>
+            </ul>
+        </div>
+    </div>
+    <button class="home" onclick="goHome()">Home</button>
+
+    <div class="cd-cart cd-cart--empty js-cd-cart">
+        <a href="#0" class="cd-cart__trigger text-replace" id="cart-trigger">
+            <img src="cart.svg" class="cd-cart__trigger-img" style="width: 50px; height: 50px;">
+        </a>
+
+        <div class="cd-cart__content">
+            <div class="cd-cart__layout">
+                <header class="cd-cart__header">
+                    <span class="cd-cart__close-btn">&times;</span>
+                </header>
+                <div class="cd-cart__body">
+                    <ul id="cart-items">
+                    </ul>
+                </div>
+                <footer class="cd-cart__footer">
+        
+                </footer>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="recipe-sidebar" id="recipe-sidebar">
+        <div class="recipe-content">
+            <span class="close-btn" onclick="closeSidebar()">&times;</span>
+            <h2>Saved Recipes</h2>
+            <ul id="saved-recipes">
+            </ul>
+        </div>
+    </div>
+
+    <script src="script2.js"></script>
+</body>
+</html>

@@ -7,7 +7,7 @@ body {
     align-items: center;
     justify-content: flex-start;
     animation: grow 1s;
-    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .container {
@@ -76,6 +76,14 @@ img {
     font-size: 20px;
     font-weight: 600;
     background-color: #CCCAC5;
+    transition: all 0.3s ease-in-out;
+}
+
+.home:hover {
+    transform: scale(0.9);
+    text-decoration: underline;
+    text-decoration-thickness:2px ;
+    text-underline-offset: 3px;
 }
 
 .rectangle {
@@ -147,6 +155,9 @@ img {
 .contact:hover, .saved:hover {
     background-color: white;
     color: black;
+    text-decoration: underline;
+    text-decoration-thickness:2px ;
+    text-underline-offset: 3px;
 }
 
 .new-section {
@@ -183,6 +194,11 @@ img {
     font-weight: 200;
 }
 
+.category-wrapper {
+    display: flex;
+    gap: 20px;
+}
+
 .rectangle2 {
     background-color: #CCCAC1;
     width: 400px;
@@ -193,7 +209,6 @@ img {
     justify-content: center;
     align-items: center;
     margin-top: 20px;
-    margin-left: 400px;
     position: relative;
     transition: transform 0.3s ease-in-out;
 }
@@ -235,4 +250,27 @@ img {
 .learn-now:hover {
     background-color: #856352;
     color: white;
+}
+
+/* Styles for saved-recipes.html */
+#saved-recipes-list {
+    margin-top: 20px;
+}
+
+.recipe-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.recipe-item h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #856352;
+}
+
+.recipe-item p {
+    margin: 5px 0 0;
+    font-size: 16px;
 }
