@@ -10,7 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <style>
-        /* Add these styles to your asian.css file */
         .cd-cart {
             position: fixed;
             top: 0;
@@ -124,19 +123,18 @@
                 <li>Low-sodium soy sauce</li>
             </ul>
         </div>
-    </div>
         <div class="rectangle">
             <p class="text-above">Uramaki</p>
-            <img src="uramaki.png" alt="urumaki">
+            <img src="uramaki.png" alt="Uramaki">
             <div class="button-group">
                 <button class="ingredients-button" onclick="toggleIngredients('uramaki-ingredients')">Ingredients</button>
                 <span class="heart-icon" onclick="addToCart('Uramaki', 'uramaki.png')">&hearts;</span>
             </div>
             <ul class="ingredients-list" id="uramaki-ingredients">
                 <li>600g sushi rice (cooked)</li>
-                <li>1 Avacado</li>
+                <li>1 Avocado</li>
                 <li>250g salmon fillets</li>
-                <li>1 sweet potatoe</li>
+                <li>1 sweet potato</li>
                 <li>4 dried seaweed sheets</li>
                 <li>2 tbsp sesame seeds</li>
                 <li>2 tbsp masago (fish roe)</li>
@@ -173,12 +171,12 @@
     <div class="recipe-sidebar" id="recipe-sidebar">
         <div class="recipe-content">
             <span class="close-btn" onclick="closeSidebar()">&times;</span>
-            <h2>Saved Recipes</h2>
-            <ul id="saved-recipes">
+            <h2>Selected Recipe</h2>
+            <img src="" id="selected-recipe-img" alt="Selected Recipe Image">
+            <ul id="selected-recipe-ingredients">
             </ul>
         </div>
     </div>
-
-    <script src="script2.js"></script>
 </body>
+<script src="asian.js"></script>
 </html>
