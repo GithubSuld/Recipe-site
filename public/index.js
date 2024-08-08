@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', function() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
+    window.scrollToTop = scrollToTop; // Expose the function to the global scope
+
     window.addEventListener('scroll', () => {
         const aboutButton = document.querySelector('.about-button');
         const newSection = document.querySelector('.new-section');
@@ -23,12 +25,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Redirect to saved recipes page
-    const savedRecipeBtn = document.getElementById('saved-recipe-btn');
-    if (savedRecipeBtn) {
-        savedRecipeBtn.addEventListener('click', function() {
-            window.location.href = 'asian-dishes.html';
-        });
-    }
+    // const savedRecipeBtn = document.getElementById('saved-recipe-btn');
+    // if (savedRecipeBtn) {
+    //     savedRecipeBtn.addEventListener('click', function() {
+    //         window.location.href = 'saved-recipes.html';
+    //     });
+    // }
+
+    
 
     // Function to save a recipe to local storage
     function saveRecipe(recipe) {
@@ -43,3 +47,9 @@ document.addEventListener('DOMContentLoaded', function() {
         learnNowButton.addEventListener('click', navigateToFoodRecipes);
     }
 });
+
+
+function savedPage() {
+    console.log('savedPage function triggered'); 
+    window.location.href = 'saved-recipes.html'; 
+}

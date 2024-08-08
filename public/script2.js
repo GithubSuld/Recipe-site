@@ -1,14 +1,12 @@
 // Toggle list visibility
 function toggleIngredients(listId) {
     const ingredientsList = document.getElementById(listId);
-    if (ingredientsList.style.display === 'none' || ingredientsList.style.display === '') {
-        ingredientsList.style.display = 'block';
-    } else {
-        ingredientsList.style.display = 'none';
-    }
+    ingredientsList.style.display = (ingredientsList.style.display === 'none' || ingredientsList.style.display === '') ? 'block' : 'none';
 }
 
+// Navigate to home page
 function goHome() {
+    console.log('goHome function triggered'); 
     window.location.href = 'index.html'; 
 }
 
@@ -45,22 +43,15 @@ function addToCart(dishName, imgSrc) {
     cartList.insertAdjacentHTML('beforeend', cartItem);
     
     updateCartCount();
-
-    // Add item to saved recipes in the sidebar
-    const savedRecipes = document.getElementById('saved-recipes');
-    const savedLi = document.createElement('li');
-    savedLi.innerHTML = `
-        <img src="${imgSrc}" alt="${dishName}" class="cart-item-img">
-        ${dishName}
-    `;
-    savedRecipes.appendChild(savedLi);
 }
 
 // Update cart item count
 function updateCartCount() {
     const cartCount = document.querySelector('.cd-cart__count li');
-    const cartItems = document.getElementById('cart-items').children.length;
-    cartCount.textContent = cartItems;
+    if (cartCount) {
+        const cartItems = document.getElementById('cart-items').children.length;
+        cartCount.textContent = cartItems;
+    }
 }
 
 // Toggle cart visibility
@@ -92,14 +83,13 @@ function closeSidebar() {
 document.addEventListener('DOMContentLoaded', function() {
     const cartTrigger = document.getElementById('cart-trigger');
     const closeCart = document.querySelector('.cd-cart__close-btn');
+    const sidebarCloseBtn = document.querySelector('.recipe-sidebar .close-btn');
 
     cartTrigger.addEventListener('click', toggleCart);
     closeCart.addEventListener('click', function () {
         document.querySelector('.cd-cart').classList.remove('cd-cart--open');
     });
 
-    // Set up close sidebar button
-    const sidebarCloseBtn = document.querySelector('.recipe-sidebar .close-btn');
     if (sidebarCloseBtn) {
         sidebarCloseBtn.addEventListener('click', closeSidebar);
     }

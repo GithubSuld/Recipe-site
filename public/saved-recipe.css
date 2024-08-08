@@ -21,3 +21,18 @@
     margin: 5px 0 0;
     font-size: 16px;
 }
+
+.home {
+    position: fixed; 
+    top: 40px;
+    left: 120px;
+    border: none;
+    padding: 20px 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: #CCCAC5;
+    transition: all 0.3s ease-in-out;
+}
